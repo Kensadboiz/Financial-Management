@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giao dịch</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/transactions.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="py-4 shadow bg-white flex items-center gap-4 max-w-6xl mx-auto px-6">
+    <button
+      onclick="history.back()"
+      aria-label="Quay lại"
+      class="p-2 rounded hover:bg-gray-200 transition"
+    >
+      <!-- Icon mũi tên trái (SVG) -->
+      <svg xmlns="https://vi.pngtree.com/freepng/arrow-left-vector-icon_4279772.html" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <h1 class="text-xl font-bold text-gray-800">Giao dịch</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto p-6">
+    <!-- Action bar -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <input
+        type="text"
+        placeholder="Tìm kiếm giao dịch..."
+        id="searchInput"
+        class="border border-gray-300 rounded px-4 py-2 flex-grow focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto rounded border border-gray-300 shadow-sm">
+      <table class="min-w-full border-collapse table-auto">
+        <thead class="bg-gray-100 text-gray-700 uppercase text-sm font-semibold select-none">
+          <tr>
+            <th class="p-3 border-b border-gray-300">Ngày</th>
+            <th class="p-3 border-b border-gray-300">Loại</th>
+            <th class="p-3 border-b border-gray-300">Danh mục</th>
+            <th class="p-3 border-b border-gray-300 text-right">Số tiền</th>
+            <th class="p-3 border-b border-gray-300">Tài khoản</th>
+            <th class="p-3 border-b border-gray-300">Ghi chú</th>
+            <th class="p-3 border-b border-gray-300">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTableBody" class="divide-y divide-gray-200 bg-white">
+          <!-- Dữ liệu giao dịch sẽ được JS đẩy vào đây -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+
+  <!-- Modal Form -->
+<!-- Cấu trúc trang footer -->
+ <!-- Modal Form -->
+  <div class="modal11-overlay" id="transactionFormOverlay">
+    <div class="modal11">
+      <form id="transactionForm">
+        <h3 id="modalTitle">➕ Giao Dịch Mới</h3>
+
+        <input type="date" id="date" required />
+        <select id="type" required>
+          <option value="">Loại</option>
+          <option value="Thu nhập">Thu nhập</option>
+          <option value="Chi tiêu">Chi tiêu</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Số tiền" required />
+
+        <select id="category" required>
+          <option value="">Danh mục</option>
+        </select>
+
+        <select id="account" required>
+          <option value="">Tài khoản</option>
+        </select>
+
+        <input type="text" id="note" placeholder="Ghi chú (tuỳ chọn)" />
+
+        <div class="modal11-actions">
+          <button type="button" id="btnCancel">Hủy</button>
+          <button type="submit" id="btnSave">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <nav class="nav-bar">
+      <a href="/index.html" class="nav-item active">
+        <span class="icon">🏠</span><span class="label">Tổng quan</span>
+      </a>
+      <a href="/pages/reports.html" class="nav-item">
+        <span class="icon">📊</span><span class="label">Báo cáo</span>
+      </a>
+      <button class="add-button" id="toggleFormBtn">＋</button>
+      <a href="/pages/transactions.html" class="nav-item">
+        <span class="icon">🔁</span><span class="label">Giao dịch</span>
+      </a>
+      <a href="/pages/settings.html" class="nav-item">
+        <span class="icon">⚙️</span><span class="label">Cài đặt</span>
+      </a>
+    </nav>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/js/transactions.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+
+</html>

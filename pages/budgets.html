@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý ngân sách</title>
+  <link rel="stylesheet" href="/css/budgets.css">
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <button
+      onclick="history.back()"
+      aria-label="Quay lại"
+      class="p-2 rounded hover:bg-gray-200 transition">
+      <!-- Icon mũi tên trái (SVG) -->
+      <svg xmlns="https://vi.pngtree.com/freepng/arrow-left-vector-icon_4279772.html" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <h1>Quản lý ngân sách</h1>
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+    <!-- Thanh Tìm Kiếm và Nút Thêm -->
+    <div class="action-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm ngân sách">
+      <button id="addBudgetBtn" class="btn-add">Thêm ngân sách</button>
+    </div>
+
+    <!-- Bảng Ngân Sách -->
+    <table class="account-table">
+      <thead>
+        <tr>
+          <th>Tên ngân sách</th>
+          <th>Số tiền</th>
+          <th>Thời gian</th>
+          <th>Đã chi</th>
+          <th>Còn lại</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="budgetTableBody">
+        <!-- Nội dung bảng ngân sách sẽ được render ở đây -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Thêm/Sửa Ngân Sách -->
+  <div id="budgetForm" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="formTitle">Thêm Ngân Sách</h2>
+      <label for="budgetName">Tên ngân sách:</label>
+      <input type="text" id="budgetName" placeholder="Nhập tên ngân sách">
+
+      <label for="budgetAmount">Số tiền:</label>
+      <input type="number" id="budgetAmount" placeholder="Nhập số tiền ngân sách">
+
+      <label for="startDate">Ngày bắt đầu:</label>
+      <input type="date" id="startDate">
+
+      <label for="endDate">Ngày kết thúc:</label>
+      <input type="date" id="endDate">
+
+      <div class="modal-buttons">
+        <button onclick="closeForm()">Hủy</button>
+        <button onclick="saveBudget()">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Dùng Ngân Sách -->
+  <div id="useBudgetForm" class="modal hidden">
+    <div class="modal-content">
+      <h2>Dùng Ngân Sách</h2>
+      <label for="usedAmount">Số tiền đã chi:</label>
+      <input type="number" id="usedAmount" placeholder="Nhập số tiền đã chi">
+
+      <div class="modal-buttons">
+        <button onclick="closeUseForm()">Hủy</button>
+        <button onclick="saveUsedBudget()">Lưu</button>
+      </div>
+    </div>
+  </div>
+<!-- Cấu trúc trang footer -->
+ <!-- Modal Form -->
+  <div class="modal11-overlay" id="transactionFormOverlay">
+    <div class="modal11">
+      <form id="transactionForm">
+        <h3 id="modalTitle">➕ Giao Dịch Mới</h3>
+
+        <input type="date" id="date" required />
+        <select id="type" required>
+          <option value="">Loại</option>
+          <option value="Thu nhập">Thu nhập</option>
+          <option value="Chi tiêu">Chi tiêu</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Số tiền" required />
+
+        <select id="category" required>
+          <option value="">Danh mục</option>
+        </select>
+
+        <select id="account" required>
+          <option value="">Tài khoản</option>
+        </select>
+
+        <input type="text" id="note" placeholder="Ghi chú (tuỳ chọn)" />
+
+        <div class="modal11-actions">
+          <button type="button" id="btnCancel">Hủy</button>
+          <button type="submit" id="btnSave">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <nav class="nav-bar">
+      <a href="/index.html" class="nav-item active">
+        <span class="icon">🏠</span><span class="label">Tổng quan</span>
+      </a>
+      <a href="/pages/reports.html" class="nav-item">
+        <span class="icon">📊</span><span class="label">Báo cáo</span>
+      </a>
+      <button class="add-button" id="toggleFormBtn">＋</button>
+      <a href="/pages/transactions.html" class="nav-item">
+        <span class="icon">🔁</span><span class="label">Giao dịch</span>
+      </a>
+      <a href="/pages/settings.html" class="nav-item">
+        <span class="icon">⚙️</span><span class="label">Cài đặt</span>
+      </a>
+    </nav>
+  </footer>
+<script src="/js/footer.js"></script>
+  <script src="/js/budgets.js"></script>
+</body>
+</html>

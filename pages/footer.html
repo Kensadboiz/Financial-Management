@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Footer Demo</title>
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+<body class="footer-demo">
+
+<!-- Cấu trúc trang footer -->
+ <!-- Modal Form -->
+  <div class="modal11-overlay" id="transactionFormOverlay">
+    <div class="modal11">
+      <form id="transactionForm">
+        <h3 id="modalTitle">➕ Giao Dịch Mới</h3>
+
+        <input type="date" id="date" required />
+        <select id="type" required>
+          <option value="">Loại</option>
+          <option value="Thu nhập">Thu nhập</option>
+          <option value="Chi tiêu">Chi tiêu</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Số tiền" required />
+
+        <select id="category" required>
+          <option value="">Danh mục</option>
+        </select>
+
+        <select id="account" required>
+          <option value="">Tài khoản</option>
+        </select>
+
+        <input type="text" id="note" placeholder="Ghi chú (tuỳ chọn)" />
+
+        <div class="modal11-actions">
+          <button type="button" id="btnCancel">Hủy</button>
+          <button type="submit" id="btnSave">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <nav class="nav-bar">
+      <a href="/index.html" class="nav-item active">
+        <span class="icon">🏠</span><span class="label">Tổng quan</span>
+      </a>
+      <a href="/pages/reports.html" class="nav-item">
+        <span class="icon">📊</span><span class="label">Báo cáo</span>
+      </a>
+      <button class="add-button" id="toggleFormBtn">＋</button>
+      <a href="/pages/transactions.html" class="nav-item">
+        <span class="icon">🔁</span><span class="label">Giao dịch</span>
+      </a>
+      <a href="/pages/settings.html" class="nav-item">
+        <span class="icon">⚙️</span><span class="label">Cài đặt</span>
+      </a>
+    </nav>
+  </footer>
+<script src="/js/footer.js"></script>
+
+</body>
+</html>

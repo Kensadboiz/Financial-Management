@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Báo cáo</title>
+  <link rel="stylesheet" href="/css/reports.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+
+  <header class="header">
+    <button
+      onclick="history.back()"
+      aria-label="Quay lại"
+      class="p-2 rounded hover:bg-gray-200 transition">
+      <!-- Icon mũi tên trái (SVG) -->
+      <svg xmlns="https://vi.pngtree.com/freepng/arrow-left-vector-icon_4279772.html" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <h1>Báo cáo</h1>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <label for="reportMonth">Chọn tháng:</label>
+      <input type="month" id="reportMonth" />
+      <button id="generateReportBtn" class="btn-generate">Tạo báo cáo</button>
+    </div>
+
+    <!-- Report Summary -->
+    <section id="reportSummary" class="report-summary hidden">
+      <h2>Tổng quan tháng <span id="reportMonthDisplay"></span></h2>
+      <div class="summary-items">
+        <div class="summary-item income">
+          <p>Thu nhập</p>
+          <h3 id="totalIncome">0₫</h3>
+        </div>
+        <div class="summary-item expense">
+          <p>Chi tiêu</p>
+          <h3 id="totalExpense">0₫</h3>
+        </div>
+        <div class="summary-item balance">
+          <p>Cân đối</p>
+          <h3 id="totalBalance">0₫</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Report Table -->
+    <section id="reportDetails" class="report-details hidden">
+      <h2>Chi tiết giao dịch</h2>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Ngày</th>
+            <th>Loại</th>
+            <th>Danh mục</th>
+            <th>Số tiền</th>
+            <th>Mô tả</th>
+          </tr>
+        </thead>
+        <tbody id="reportTableBody"></tbody>
+      </table>
+    </section>
+  </main>
+<!-- Cấu trúc trang footer -->
+ <!-- Modal Form -->
+  <div class="modal11-overlay" id="transactionFormOverlay">
+    <div class="modal11">
+      <form id="transactionForm">
+        <h3 id="modalTitle">➕ Giao Dịch Mới</h3>
+
+        <input type="date" id="date" required />
+        <select id="type" required>
+          <option value="">Loại</option>
+          <option value="Thu nhập">Thu nhập</option>
+          <option value="Chi tiêu">Chi tiêu</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Số tiền" required />
+
+        <select id="category" required>
+          <option value="">Danh mục</option>
+        </select>
+
+        <select id="account" required>
+          <option value="">Tài khoản</option>
+        </select>
+
+        <input type="text" id="note" placeholder="Ghi chú (tuỳ chọn)" />
+
+        <div class="modal11-actions">
+          <button type="button" id="btnCancel">Hủy</button>
+          <button type="submit" id="btnSave">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <nav class="nav-bar">
+      <a href="/index.html" class="nav-item active">
+        <span class="icon">🏠</span><span class="label">Tổng quan</span>
+      </a>
+      <a href="/pages/reports.html" class="nav-item">
+        <span class="icon">📊</span><span class="label">Báo cáo</span>
+      </a>
+      <button class="add-button" id="toggleFormBtn">＋</button>
+      <a href="/pages/transactions.html" class="nav-item">
+        <span class="icon">🔁</span><span class="label">Giao dịch</span>
+      </a>
+      <a href="/pages/settings.html" class="nav-item">
+        <span class="icon">⚙️</span><span class="label">Cài đặt</span>
+      </a>
+    </nav>
+  </footer>
+  <script src="/js/reports.js"></script>
+  <script src="/js/footer.js"></script>
+</body>
+</html>

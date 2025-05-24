@@ -1,0 +1,270 @@
+/* ===== GENERAL ===== */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100px; /* chừa không gian cho footer */
+}
+
+/* ===== HEADER ===== */
+/* Header */
+/* Header nhỏ gọn, màu xanh nước nhạt */
+.header {
+  background-color: #e0f2fe; /* Tailwind sky-100 */
+  color: #0c4a6e;            /* Tailwind sky-900 */
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Nút quay lại */
+.header button[aria-label="Quay lại"] {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #0369a1; /* Tailwind sky-700 */
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.header button[aria-label="Quay lại"]:hover {
+  background-color: #bae6fd; /* Tailwind sky-200 */
+}
+
+/* Icon back SVG */
+.header svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Tiêu đề canh giữa nhưng chừa chỗ cho nút bên trái */
+.header h1 {
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 2rem;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+/* ===== ACTION BAR ===== */
+.action-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+@media (min-width: 640px) {
+  .action-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.search-input {
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+}
+
+.btn-add {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #1e40af;
+}
+
+/* ===== MODAL FORM ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 28px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 460px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #2563eb;
+}
+
+/* ===== MODAL BUTTONS ===== */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-confirm {
+  background-color: #10b981;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-confirm:hover {
+  background-color: #059669;
+}
+
+.btn-cancel {
+  background-color: #ef4444;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-cancel:hover {
+  background-color: #dc2626;
+}
+
+/* ===== TABLE ===== */
+.table-container {
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+}
+
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.account-table th,
+.account-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+.account-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.account-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.summary-item{
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #000204;
+  padding: 14px 16px;
+}
+/* ===== STATUS ===== */
+.status.paid {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.status.pending {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.btn-edit,
+.btn-delete {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-edit {
+  background-color: #e0f2fe;
+  color: #2563eb;
+}
+
+.btn-edit:hover {
+  background-color: #bfdbfe;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background-color: #fecaca;
+}
+
+/* ===== PAY BUTTON ===== */
+.btn-pay {
+  background-color: #10b981;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-pay:hover {
+  background-color: #059669;
+}
+
+/* ===== HIDDEN CLASS ===== */
+.hidden {
+  display: none;
+}
