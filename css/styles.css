@@ -227,3 +227,123 @@ body {
   background-color: #f97316;
   transition: width 0.3s;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    padding-right: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+
+  .balance-card .balance {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .summary {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .income, .expense {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1rem;
+  }
+
+  .section-header a {
+    align-self: flex-end;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .budget-list li,
+  .transaction-list li,
+  .bill-list li {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .search-wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  .search-icon {
+    align-self: flex-end;
+    margin-top: -40px;
+    margin-right: 0.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Touch-friendly styles */
+@media (hover: none) {
+  .btn-add,
+  .section-header a,
+  .budget-list li,
+  .transaction-list li,
+  .bill-list li {
+    padding: 0.75rem;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  /* Add touch feedback */
+  .btn-add:active,
+  .section-header a:active,
+  .budget-list li:active,
+  .transaction-list li:active,
+  .bill-list li:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+}
